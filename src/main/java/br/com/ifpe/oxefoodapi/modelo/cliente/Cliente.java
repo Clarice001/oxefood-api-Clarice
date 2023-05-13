@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.Where;
 
-import br.com.ifpe.oxefood.util.entity.EntidadeAuditavel;
+import br.com.ifpe.oxefoodapi.util.entity.EntidadeAuditavel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -25,19 +25,24 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Cliente extends EntidadeAuditavel  {
 
-   
+   /**
+    *
+    */
+   private static final long serialVersionUID = 1L;
+
+   @Column
    private String nome;
 
-   
+   @Column
    private LocalDate dataNascimento;
 
-   
+   @Column
    private String cpf;
 
-  
+   @Column
    private String foneCelular;
 
-   
+   @Column
    private String foneFixo;
 
 }
