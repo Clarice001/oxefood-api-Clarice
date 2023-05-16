@@ -28,4 +28,3 @@ public class ClienteController extends GenericController {
        return new ResponseEntity<Cliente>(cliente, HttpStatus.CREATED);
    }
 }
-
