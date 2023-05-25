@@ -10,6 +10,7 @@ import org.hibernate.annotations.Where;
 
 import br.com.ifpe.oxefoodapi.util.entity.EntidadeAuditavel;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -17,7 +18,7 @@ import lombok.Setter;
 @Entity
 @Table(name = "CupomDesconto")
 @Where(clause = "habilitado = true")
-
+@Builder
 @Getter
 @Setter
 @AllArgsConstructor
@@ -50,9 +51,7 @@ public class CupomDesconto extends EntidadeAuditavel  {
    @Column
    private LocalDate FimDaVigencia;
 
-public static Object builder() {
-    return null;
-}
+
 
 }
 

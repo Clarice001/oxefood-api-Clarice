@@ -20,11 +20,11 @@ public class CupomDescontoRequest {
 
    private Double PercentualDesconto;
 
-   private String ValorDesconto;
+   private Double ValorDesconto;
 
-   private String ValorMinimoPermitidoParaOPedido;
+   private Double ValorMinimoPermitidoParaOPedido;
 
-   private String QuantidadeMaximaDeUsoPorCliente;
+   private int QuantidadeMaximaDeUsoPorCliente;
 
    @JsonFormat(pattern = "dd/MM/yyyy")
    private LocalDate InicioDaVigencia;
@@ -35,7 +35,7 @@ public class CupomDescontoRequest {
    public CupomDesconto build() {
 
        return CupomDesconto.builder()
-               .codigo(codigo)
+               .Codigo(codigo)
                .PercentualDesconto(PercentualDesconto)
                .ValorDesconto(ValorDesconto)
                .ValorMinimoPermitidoParaOPedido(ValorMinimoPermitidoParaOPedido)

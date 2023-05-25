@@ -27,4 +27,6 @@ public class ClienteController extends GenericController {
        Cliente cliente = clienteService.save(request.build());
        return new ResponseEntity<Cliente>(cliente, HttpStatus.CREATED);
    }
+
+   
 }

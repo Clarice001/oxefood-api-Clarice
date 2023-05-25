@@ -30,9 +30,9 @@ public void setCupomDescontoService(CupomDescontoService cupomDescontoService) {
 }
 
 @PostMapping
-   public ResponseEntity<CupomDesconto> save(@RequestBody @Valid CupomDescontorRequest request) {
+   public ResponseEntity<CupomDesconto> save(@RequestBody @Valid CupomDescontoRequest request) {
 
-       CupomDesconto cupomDesconto = cupomDescontoService.save(request.build());
+       CupomDesconto cupomDesconto = CupomDescontoService.save((request).build());
        return new ResponseEntity<CupomDesconto>(cupomDesconto, HttpStatus.CREATED);
    }
 }
