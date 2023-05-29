@@ -25,9 +25,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Cliente extends EntidadeAuditavel  {
 
-   /**
-    *
-    */
+  
    private static final long serialVersionUID = 1L;
 
    @Column
