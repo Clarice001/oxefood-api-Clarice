@@ -23,6 +23,22 @@ public class ProdutoService extends GenericService {
        return repository.save(produto);
    }
 
+   @Transactional
+   public void update(Long id, ProdutoRequest produtoRequest) {
+
+      Produto produto = repository.findById(id).get();
+      produto.setCodigo(produtoRequest.getCodigo());
+      produto.setTitulo(produtoRequest.getTitulo());
+      produto.setDescricao(produtoRequest.getDescricao());
+      produto.setValorUnitario(produtoRequest.getValorUnitario());
+      produto.setTempoEntregaMinimo(produtoRequest.getTempoEntregaMinimo());
+      produto.setTempoEntregaMaximo(produtoRequest.getTempoEntregaMaximo());
+	    
+      super.preencherCamposAuditoria(produto);
+      repository.save(produto);
+  }
+
+
 public static Produto save(ProdutoRequest build) {
     return null;
 }

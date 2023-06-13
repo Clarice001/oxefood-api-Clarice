@@ -23,6 +23,30 @@ public class EntregadorService extends GenericService {
        return repository.save(entregador);
    }
 
+   @Transactional
+   public void update(Long id, Entregador entregadorAlterado) {
+
+      Entregador entregador = repository.findById(id).get();
+      entregador.setNome(entregadorAlterado.getNome());
+      entregador.setCpf(entregadorAlterado.getCpf());
+      entregador.setRg(entregadorAlterado.getRg());
+      entregador.setDataNascimento(entregadorAlterado.getDataNascimento());
+      entregador.setFoneCelular(entregadorAlterado.getFoneCelular());
+      entregador.setQtdEntregasRealizadas(entregadorAlterado.getQtdEntregasRealizadas());
+      entregador.setValorFrete(entregadorAlterado.getValorFrete());
+      entregador.setEnderecoRua(entregadorAlterado.getEnderecoRua());
+      entregador.setEnderecoNumero(entregadorAlterado.getEnderecoNumero());
+      entregador.setEnderecoBairro(entregadorAlterado.getEnderecoBairro());
+      entregador.setEnderecoCep(entregadorAlterado.getEnderecoCep());
+      entregador.setEnderecoCidade(entregadorAlterado.getEnderecoCidade());
+      entregador.setEnderecoUf(entregadorAlterado.getEnderecoUf());
+      entregador.setEnderecoComplemento(entregadorAlterado.getEnderecoComplemento());
+      entregador.setAtivo(entregadorAlterado.getAtivo());
+      super.preencherCamposAuditoria(entregador);
+      repository.save(entregador);
+  }
+
+
 public static Entregador save(EntregadorRequest build) {
     return null;
 }
