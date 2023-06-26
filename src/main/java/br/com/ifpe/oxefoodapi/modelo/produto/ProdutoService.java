@@ -24,15 +24,15 @@ public class ProdutoService extends GenericService {
    }
 
    @Transactional
-   public void update(Long id, ProdutoRequest produtoRequest) {
+   public void update(Long id, Produto produto2) {
 
       Produto produto = repository.findById(id).get();
-      produto.setCodigo(produtoRequest.getCodigo());
-      produto.setTitulo(produtoRequest.getTitulo());
-      produto.setDescricao(produtoRequest.getDescricao());
-      produto.setValorUnitario(produtoRequest.getValorUnitario());
-      produto.setTempoEntregaMinimo(produtoRequest.getTempoEntregaMinimo());
-      produto.setTempoEntregaMaximo(produtoRequest.getTempoEntregaMaximo());
+      produto.setCodigo(produto2.getCodigo());
+      produto.setTitulo(produto2.getTitulo());
+      produto.setDescricao(produto2.getDescricao());
+      produto.setValorUnitario(produto2.getValorUnitario());
+      produto.setTempoEntregaMinimo(produto2.getTempoEntregaMinimo());
+      produto.setTempoEntregaMaximo(produto2.getTempoEntregaMaximo());
 	    
       super.preencherCamposAuditoria(produto);
       repository.save(produto);

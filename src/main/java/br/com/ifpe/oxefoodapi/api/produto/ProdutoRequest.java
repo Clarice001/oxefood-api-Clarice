@@ -37,6 +37,8 @@ public class ProdutoRequest {
                .tempoEntregaMinimo(tempoEntregaMinimo)
                .tempoEntregaMaximo(tempoEntregaMaximo)
                .build();
+
+              
    }
 }
 
