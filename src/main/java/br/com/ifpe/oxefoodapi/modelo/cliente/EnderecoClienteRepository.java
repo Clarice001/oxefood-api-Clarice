@@ -1,4 +1,4 @@
-package br.com.ifpe.oxefood.modelo.cliente;
+package br.com.ifpe.oxefoodapi.modelo.cliente;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
